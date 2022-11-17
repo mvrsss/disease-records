@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover Detail</title>
+</head>
+<body>
+<p> Discover Country Name: {{ discover.cname }} | <a href="{% url 'discover_update' discover.id %}">Update</a> |
+    <a href="{% url 'discover_delete' discover.id %}">Delete</a>
+</p>
+<p> Discover Disease Code: {{ discover.get_disease_code_display }} </p>
+<p> Discover First Encountered Date: {{ discover.get_first_enc_date_year }} </p>
+<p> Discover First Encountered Date: {{ discover.get_first_enc_date_month }} </p>
+<p> Discover First Encountered Date: {{ discover.get_first_enc_date_day }} </p>
+<p> <a href="{% url 'discover_list' %}">View All Discoveries</a> |
+    <a href="{% url 'discover_create'%}">New Discover</a>
+</p>
+</body>
+</html>

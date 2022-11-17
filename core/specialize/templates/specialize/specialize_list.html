@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Specialize List</title>
+</head>
+<body>
+<h3>Specialize List</h3>
+{% for u in specialize %}
+    <p>{{ forloop.counter }}. {{ u.did.id }} - {{u.email.email.email}} 
+        (<a href="{% url 'specialize_update' u.id %}">Update</a> |
+        <a href="{% url 'specialize_delete' u.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'specialize_create' %}"> + Add A New Specialize</a></p>
+</body>
+</html>

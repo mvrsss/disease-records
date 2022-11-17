@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Detail</title>
+</head>
+<body>
+<p> Disease Type ID: {{ disease_type.id }} | <a href="{% url 'disease_type_update' disease_type.id %}">Update</a> |
+    <a href="{% url 'disease_type_delete' disease_type.id %}">Delete</a>
+</p>
+<p> Disease Type Description: {{ disease_type.get_description_display }} </p>
+<p> <a href="{% url 'disease_type_list' %}">View All Disease Types</a> |
+    <a href="{% url 'disease_type_create'%}">New Disease Type</a>
+</p>
+</body>
+</html>

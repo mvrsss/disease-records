@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Detail</title>
+</head>
+<body>
+<p> Disease Code: {{ disease.disease_code }} | <a href="{% url 'disease_update' disease.disease_code %}">Update</a> |
+    <a href="{% url 'disease_delete' disease.disease_code %}">Delete</a>
+</p>
+<p> Disease Description: {{ disease.get_description_display }} </p>
+<p> Disease Pathogen: {{ disease.get_pathogen_display }} </p>
+<p> Disease Type ID: {{ disease.get_tid_display }} </p>
+<p> <a href="{% url 'disease_list' %}">View All Diseases</a> |
+    <a href="{% url 'disease_create'%}">New Disease</a>
+</p>
+</body>
+</html>

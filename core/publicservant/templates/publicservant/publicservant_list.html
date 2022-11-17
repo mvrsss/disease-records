@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Public Servant List</title>
+</head>
+<body>
+<h3>Public Servant List</h3>
+{% for u in publicservant %}
+    <p>{{ forloop.counter }}. {{u.email.email}} {{u.department}} 
+        (<a href="{% url 'publicservant_update' u.id %}">Update</a> |
+        <a href="{% url 'publicservant_delete' u.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'publicservant_create' %}"> + Add A New Public Servant</a></p>
+</body>
+</html>

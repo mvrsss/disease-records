@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Detail</title>
+</head>
+<body>
+<p> Doctor Email: {{ doctor.email }} | <a href="{% url 'doctor_update' doctor.id %}">Update</a> |
+    <a href="{% url 'doctor_delete' doctor.id %}">Delete</a>
+</p>
+<p> Doctor Degree: {{ doctor.get_degree_display }} </p>
+<p> <a href="{% url 'doctor_list' %}">View All Doctors</a> |
+    <a href="{% url 'doctor_create'%}">New Doctor</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease List</title>
+</head>
+<body>
+<h3>Disease List</h3>
+{% for d in disease %}
+    <p>{{ forloop.counter }}. {{ d.disease_code }} - {{ d.get_description_display }}
+        (<a href="{% url 'disease_update' d.id %}">Update</a> |
+        <a href="{% url 'disease_delete' d.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'disease_create' %}"> + Add A New Disease</a></p>
+</body>
+</html>

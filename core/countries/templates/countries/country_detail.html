@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country Detail</title>
+</head>
+<body>
+<p> Country Name: {{ country.cname }} | <a href="{% url 'country_update' country.id %}">Update</a> |
+    <a href="{% url 'country_delete' country.id %}">Delete</a>
+</p>
+<p> Country Population: {{ country.get_population_display }} </p>
+<p> <a href="{% url 'country_list' %}">View All Countries</a> |
+    <a href="{% url 'country_create'%}">New Country</a>
+</p>
+</body>
+</html>

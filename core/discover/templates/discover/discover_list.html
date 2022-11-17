@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover List</title>
+</head>
+<body>
+<h3>Discover List</h3>
+{% for discov in discover %}
+    <p>{{ forloop.counter }}. {{ discov.id}} - {{ discov.disease_code }}
+        (<a href="{% url 'discover_update' discov.id %}">Update</a> |
+        <a href="{% url 'discover_delete' discov.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p>{{ discover.cname }}</p>
+
+<p> <a href="{% url 'discover_create' %}"> + Add A New Discover</a></p>
+</body>
+</html>

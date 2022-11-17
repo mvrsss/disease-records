@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Specialize Detail</title>
+</head>
+<body>
+<p> Specialize Disease ID: {{ specialize.did }} | <a href="{% url 'specialize_update' specialize.id %}">Update</a> |
+    <a href="{% url 'specialize_delete' specialize.id %}">Delete</a>
+</p>
+<p> Specialize Email: {{ specialize.get_email_display }} </p>
+<p> <a href="{% url 'specialize_list' %}">View All Specializes</a> |
+    <a href="{% url 'specialize_create'%}">New Specialize</a>
+</p>
+</body>
+</html>

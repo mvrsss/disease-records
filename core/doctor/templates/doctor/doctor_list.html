@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor List</title>
+</head>
+<body>
+<h3>Doctor List</h3>
+{% for u in doctor %}
+    <p>{{ forloop.counter }}. {{u.email.email}} {{u.degree}} 
+        (<a href="{% url 'doctor_update' u.id %}">Update</a> |
+        <a href="{% url 'doctor_delete' u.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'doctor_create' %}"> + Add A New Doctor</a></p>
+</body>
+</html>

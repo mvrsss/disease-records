@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Record List</title>
+</head>
+<body>
+<h3>Record List</h3>
+{% for u in record %}
+    <p>{{ forloop.counter }}. {{ u.email.email.email }} - {{u.disease_code.description}}
+        (<a href="{% url 'record_update' u.id %}">Update</a> |
+        <a href="{% url 'record_delete' u.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'record_create' %}"> + Add A New Record</a></p>
+</body>
+</html>

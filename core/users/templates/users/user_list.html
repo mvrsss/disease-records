@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+<h3>User List</h3>
+{% for u in user %}
+    <p>{{ forloop.counter }}. {{ u.id }} - {{u.name}} {{u.surname}} 
+        (<a href="{% url 'user_update' u.id %}">Update</a> |
+        <a href="{% url 'user_delete' u.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'user_create' %}"> + Add A New User</a></p>
+</body>
+</html>

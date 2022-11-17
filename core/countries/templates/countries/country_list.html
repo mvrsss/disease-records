@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country List</title>
+</head>
+<body>
+<h3>Country List</h3>
+{% for country in countries %}
+    <p>{{ forloop.counter }}. {{ country.cname }} - {{ country.get_population_display }}
+        (<a href="{% url 'country_update' country.id %}">Update</a> |
+        <a href="{% url 'country_delete' country.id %}">Delete</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'country_create' %}"> + Add A New Country</a></p>
+</body>
+</html>

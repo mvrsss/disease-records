@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Detail</title>
+</head>
+<body>
+<p> User Name: {{ user.name }} | <a href="{% url 'user_update' user.id %}">Update</a> |
+    <a href="{% url 'user_delete' user.id %}">Delete</a>
+</p>
+<p> User Surname: {{ user.get_surname_display }} </p>
+<p> User Salary: {{ user.get_salary_display }} </p>
+<p> User Phone: {{ user.get_phone_display }} </p>
+<p> User Country Name: {{ user.get_cname_display }} </p>
+<p> <a href="{% url 'user_list' %}">View All Countries</a> |
+    <a href="{% url 'user_create'%}">New User</a>
+</p>
+</body>
+</html>

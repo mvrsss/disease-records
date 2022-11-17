@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Record Detail</title>
+</head>
+<body>
+<p> Record Email: {{ record.email }} | <a href="{% url 'record_update' record.id %}">Update</a> |
+    <a href="{% url 'record_delete' record.id %}">Delete</a>
+</p>
+<p> Record Country Name: {{ record.get_cname_display }} </p>
+<p> Record Disease Code: {{ record.get_disease_code_display }} </p>
+<p> Record Total Deaths: {{ record.get_total_dealth_display }} </p>
+<p> Record Total Patients: {{ record.get_total_patients_display }} </p>
+<p> <a href="{% url 'record_list' %}">View All Records</a> |
+    <a href="{% url 'record_create'%}">New Record</a>
+</p>
+</body>
+</html>

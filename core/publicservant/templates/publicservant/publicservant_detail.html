@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Public Servant Detail</title>
+</head>
+<body>
+<p> Public Servant Email: {{ publicservant.email }} | <a href="{% url 'publicservant_update' publicservant.id %}">Update</a> |
+    <a href="{% url 'publicservant_delete' publicservant.id %}">Delete</a>
+</p>
+<p> Public Servant Department: {{ publicservant.get_department_display }} </p>
+<p> <a href="{% url 'publicservant_list' %}">View All Countries</a> |
+    <a href="{% url 'publicservant_create'%}">New Public Servant</a>
+</p>
+</body>
+</html>
